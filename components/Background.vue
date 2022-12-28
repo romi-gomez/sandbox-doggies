@@ -1,6 +1,7 @@
 
 <template>
   <div class="background-container">
+      <div class="background-container__overlay"></div>
       <div class="background-container__floating-image --1"></div>
       <div class="background-container__floating-image --2"></div>
       <div class="background-container__floating-image --3"></div>
@@ -94,6 +95,14 @@ export default {
           grid-row-start: 5;
           grid-row-end: 7;
         }
+    }
+
+    &__overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background: rgb(18,16,14);
+      background: radial-gradient(circle, rgba(18,16,14,0) 10%, rgba(18,16,14,1) 100%);
     }
 
   }
