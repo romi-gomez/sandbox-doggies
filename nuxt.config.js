@@ -16,14 +16,15 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {rel: 'stylesheet',  href: 'https://fonts.googleapis.com/css2?family=Montserrat'}
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Montserrat',
+      },
     ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~assets/css/main.css'
-  ],
+  css: ['~assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -41,10 +42,7 @@ export default {
   ],
 
   styleResources: {
-    scss: [
-      '~assets/scss/mixins.scss',
-      '~assets/scss/variables.scss'
-    ]
+    scss: ['~assets/scss/mixins.scss', '~assets/scss/variables.scss'],
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
