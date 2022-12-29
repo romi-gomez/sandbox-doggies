@@ -1,8 +1,7 @@
-
 <template>
   <div class="logo-container">
     <a :href="url" target="_blank">
-      <img :style="imageStyle" :src="require(`~/assets/images/${logo}`)"/>
+      <img :style="imageStyle" :src="require(`~/assets/images/${logo}`)" />
     </a>
   </div>
 </template>
@@ -13,34 +12,34 @@ export default {
   props: {
     logo: {
       type: String,
-      default: ""
+      default: '',
     },
     url: {
       type: String,
-      default: "/"
+      default: '/',
     },
     size: {
       type: String,
-      default: '300'
-    }
+      default: '300',
+    },
   },
   computed: {
     imageStyle() {
       return `max-width:${this.size}px`
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang='scss'>
- .logo-container{
-    padding:2em;
-    text-align: center;
-    display:flex;
-    justify-content: center;
+<style lang="scss">
+.logo-container {
+  padding: 2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 
-    img {
-      width:100%;
-    }
- }
+  img {
+    width: 100%;
+  }
+}
 </style>
