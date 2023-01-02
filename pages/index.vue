@@ -2,17 +2,67 @@
   <div class="container">
     <Logo class="container__logo" logo="snoop-logo.svg" size="300" />
     <ConnectMetamask class="container__connect" @connect="connectToMetamask()" />
+    <SearchBar @search="searchToken(currentTokenId)"/>
+    <NftInfo v-if="$store.state.currentTokenData !== null" class="container__nftInfo"/>
   </div>
 </template>
 
 <script>
-
+ import Web3 from 'web3'
+ import abi from '~/assets/data/ethereum/doggiesAbi.json'
 
 export default {
   name: 'IndexPage',
+  data: () =>{
+    return {
+      currentTokenId: 1234
+      }
+  },
+  mounted(){
+    if(this.$store.state.connectedAccount !== ''){
+      this.$store.commit('setIsConnected', true)
+    }
+  },
   methods: {
-    connectToMetamask() {
+    async connectToMetamask (){
+      try{
+        if(window.ethereum){
+          const accounts = await window.ethereum.request({method: 'eth_requestAccounts'});
+          this.$store.commit('setConnectedAccount', accounts[0])
+          if (this.$store.state.connectedAccount !== []) {
+            this.$store.commit('setIsConnected', true)
+          }
+        }
+      } catch (err ){
+        console.error(err)
+      }
+    },
+   async searchToken(){
+      try{
+        if(this.$store.state.isConnected){
+          const web3 = new Web3(window.ethereum)
+          const contract = new web3.eth.Contract(abi, this.$store.contractAddress)
+          contract.options.address = this.$store.state.contractAddress
 
+          await contract.methods.tokenURI(this.currentTokenId)
+            .call()
+            .then( url => {
+              try{
+                fetch(url)
+                  .then( async (data) => {
+                    const tokenData = await data.json()
+                    this.$store.commit('setCurrentTokenData', tokenData)
+                  })
+              }catch(err){
+                console.error(err)
+              }
+            })
+        } else {
+          console.log("you need to be connected to Metamask")
+        }
+      } catch(err){
+        console.error(err)
+      }
     }
   }
 }
@@ -28,6 +78,10 @@ export default {
     }
 
     &__connect{
+
+    }
+
+    &__nftInfo{
 
     }
   }
