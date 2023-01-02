@@ -3,7 +3,7 @@
     <Logo class="container__logo" logo="snoop-logo.svg" size="300" />
     <ConnectMetamask class="container__connect" @connect="connectToMetamask()" />
     <SearchBar @search="searchToken(currentTokenId)"/>
-    <NftInfo v-if="$store.state.currentTokenData !== null" class="container__nftInfo"/>
+    <NftInfo v-if="$store.state.currentTokenData !== null" />
   </div>
 </template>
 
