@@ -8,14 +8,9 @@
 <script>
 export default {
   name: 'SearchBar',
-  data: () => {
-    return {
-      isSearching: false,
-    }
-  },
   computed: {
     setButtonText() {
-      return this.isSearching ? 'Show this Doggy' : 'Show me any Doggy'
+      return this.$store.state.currentTokenId !== '' && this.$store.state.currentTokenId.length === 4 ? 'Show this Doggy' : 'Show me any Doggy'
     },
   },
 }

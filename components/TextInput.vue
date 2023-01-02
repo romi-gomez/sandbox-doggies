@@ -4,6 +4,7 @@
     class="input-text"
     type="text"
     name="DoggyId"
+    v-model="getInputValue"
     placeholder="Enter a doggy ID or press the button to get a random one"
   />
 </template>
@@ -11,7 +12,16 @@
 <script>
 export default {
   name: 'TextInput',
-  props: {},
+  computed: {
+    getInputValue: {
+      get() {
+        return this.$store.state.currentTokenId !== 0 ? this.$store.state.currentTokenId : ''
+      },
+      set(newValue) {
+        this.$store.commit('setCurrentTokenId', newValue)
+      }
+    }
+  }
 }
 </script>
 
