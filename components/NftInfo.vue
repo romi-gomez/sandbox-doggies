@@ -1,13 +1,17 @@
 <template>
-  <div class="doggie-container"></div>
+  <div class="doggie-container">
+  </div>
 </template>
 
 <script>
 export default {
   name: 'NftInfoContainer',
-  props: {},
-  computed: {},
+  mounted(){
+    console.log(this.$store.state.currentTokenData)
+  }
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

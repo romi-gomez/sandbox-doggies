@@ -1,14 +1,13 @@
 <template>
   <div class="search-bar">
     <TextInput />
-    <Button class="search-bar__button" :button-text="setButtonText" />
+    <Button class="search-bar__button" :button-text="setButtonText" @click="$emit('search')"/>
   </div>
 </template>
 
 <script>
 export default {
   name: 'SearchBar',
-  props: {},
   data: () => {
     return {
       isSearching: false,
