@@ -2,7 +2,7 @@
   <div class="container">
     <Logo class="container__logo" logo="snoop-logo.svg" size="300" />
     <ConnectMetamask class="container__connect" @connect="connectToMetamask()" />
-    <SearchBar @search="searchToken(currentTokenId)"/>
+    <SearchBar @search="searchToken()"/>
     <NftInfo v-if="$store.state.currentTokenData !== null" />
   </div>
 </template>
@@ -44,7 +44,7 @@ export default {
           const contract = new web3.eth.Contract(abi, this.$store.contractAddress)
           contract.options.address = this.$store.state.contractAddress
 
-          await contract.methods.tokenURI(this.currentTokenId)
+          await contract.methods.tokenURI(this.$store.state.currentTokenId)
             .call()
             .then( url => {
               try{

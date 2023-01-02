@@ -2,7 +2,8 @@ export const state = () => ({
   connectedAccount: '',
   contractAddress: '0xc7df86762ba83f2a6197e1ff9bb40ae0f696b9e6',
   currentTokenData: null,
-  isConnected: false
+  currentTokenId: 0,
+  isConnected: false,
 })
 
 export const getters = {
@@ -14,6 +15,9 @@ export const getters = {
   },
   getCurrentTokenData(state){
     return state.currentTokenData
+  },
+  getCurrentTokenId(state){
+    return state.currentTokenId
   },
   getIsConnected(state){
     return state.isConnected
@@ -29,6 +33,9 @@ export const mutations = {
   },
   setCurrentTokenData(state, currentTokenData){
     state.currentTokenData = currentTokenData
+  },
+  setCurrentTokenId(state, currentTokenId){
+    state.currentTokenId = currentTokenId
   },
   setIsConnected(state, isConnected) {
     state.isConnected = isConnected
