@@ -2,8 +2,7 @@
 
 <template>
   <div class="connect-container">
-    <Button class="connect__button" button-text="Connect to Metamask!" @click="connectToMetamask()" />
-    <h1>{{$store.connectedAccount}}</h1>
+    <Button class="connect__button" button-text="Connect to Metamask!" @click="$emit('connect')" />
   </div>
 </template>
 
@@ -11,14 +10,6 @@
 
 export default {
   name: 'ConnectMetamask',
-  props: {},
-
-  methods: {
-    connectToMetamask (){
-      console.log('connecting to metamask')
-
-    }
-  }
 }
 </script>
 
