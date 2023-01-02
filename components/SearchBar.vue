@@ -1,7 +1,7 @@
 <template>
   <div class="search-bar">
-    <TextInput />
-    <Button class="search-bar__button" :button-text="setButtonText" @click="$emit('search')"/>
+    <TextInput @enterPressed="sendIdForSearch()"/>
+    <Button class="search-bar__button" :button-text="setButtonText" @click="sendIdForSearch()"/>
   </div>
 </template>
 
@@ -13,6 +13,11 @@ export default {
       return this.$store.state.currentTokenId !== '' && this.$store.state.currentTokenId.length === 4 ? 'Show this Doggy' : 'Show me any Doggy'
     },
   },
+  methods: {
+    sendIdForSearch(){
+      this.$emit('search')
+    }
+  }
 }
 </script>
 

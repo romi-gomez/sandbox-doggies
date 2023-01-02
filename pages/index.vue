@@ -13,11 +13,6 @@
 
 export default {
   name: 'IndexPage',
-  data: () =>{
-    return {
-      currentTokenId: 1234
-      }
-  },
   mounted(){
     if(this.$store.state.connectedAccount !== ''){
       this.$store.commit('setIsConnected', true)
@@ -44,7 +39,9 @@ export default {
           const contract = new web3.eth.Contract(abi, this.$store.contractAddress)
           contract.options.address = this.$store.state.contractAddress
 
-          await contract.methods.tokenURI(this.$store.state.currentTokenId)
+          const searchId = this.$store.state.currentTokenId !== '' && this.$store.state.currentTokenId.length === 4 ? this.$store.state.currentTokenId : this.generateRandomId(4)
+
+          await contract.methods.tokenURI(searchId)
             .call()
             .then( url => {
               try{
@@ -63,6 +60,14 @@ export default {
       } catch(err){
         console.error(err)
       }
+    },
+
+    generateRandomId(digits){
+      const id = []
+      for(let i = 0; i < digits; i++ ){
+        id.push(Math.floor(Math.random()*9)+1)
+      }
+      return id.reduce((accum, digit) => (accum * 10) + digit, 0)
     }
   }
 }

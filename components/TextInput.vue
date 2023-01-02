@@ -6,6 +6,7 @@
     name="DoggyId"
     v-model="getInputValue"
     placeholder="Enter a doggy ID or press the button to get a random one"
+    @keydown.enter="$emit('enterPressed')"
   />
 </template>
 

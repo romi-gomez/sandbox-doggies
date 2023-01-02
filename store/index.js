@@ -2,7 +2,7 @@ export const state = () => ({
   connectedAccount: '',
   contractAddress: '0xc7df86762ba83f2a6197e1ff9bb40ae0f696b9e6',
   currentTokenData: null,
-  currentTokenId: 0,
+  currentTokenId: '',
   isConnected: false,
 })
 
