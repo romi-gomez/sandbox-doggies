@@ -82,6 +82,6 @@ export default {
   }
 
   .logos{
-    margin:4em 0 1.5em ;
+    margin:4em 0 0 0 ;
   }
 </style>
