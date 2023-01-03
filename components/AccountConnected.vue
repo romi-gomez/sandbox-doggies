@@ -1,5 +1,5 @@
 <template>
-  <div class="account-container">
+  <div :style="setStyle" class="account-container">
     <img :src="require(`~/assets/images/metamask-logo.png`)" alt="metamask logo">
     <p class="account-number">You are connected to the account: <span>{{$store.state.connectedAccount}} </span></p>
   </div>
@@ -8,7 +8,20 @@
 <script>
 export default {
   name:'connectedAccount',
-}
+  data: () => {
+    return {
+      isMounted: false
+    }
+  },
+  computed: {
+    setStyle(){
+      return this.isMounted ? "transform: translateY(60px);" : ""
+    }
+  },
+  mounted(){
+    this.isMounted = true
+  }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +38,7 @@ export default {
     background: $primary;
     color:white;
     font-weight:700;
+    margin-top:-60px;
 
     img {
       height:50%;

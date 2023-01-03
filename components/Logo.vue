@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss">
 .logo-container {
-  padding: 2em;
+  padding: 1em;
   text-align: center;
   display: flex;
   justify-content: center;
