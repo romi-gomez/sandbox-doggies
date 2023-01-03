@@ -34,7 +34,7 @@ export default {
   padding: 0.5em 1em;
   background: $primary;
   color: $accent;
-  font-size: 1.5em;
+  font-size: 1.25em;
 
   &:focus-visible {
     outline: 2px solid $accent;

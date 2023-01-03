@@ -20,20 +20,21 @@ export default {
     left:0;
     height:50px;
     align-items:center;
-    justify-items:center;
+    justify-content: space-between;
+    padding:0 1em;
     background: $primary;
     color:white;
     font-weight:700;
 
     img {
       height:50%;
-      margin:0 2em;
+      justify-self: flex-end;
     }
 
   .account-number{
+    justify-self: flex-end;
     span{
       color:$accent;
-
     }
   }
 
