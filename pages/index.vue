@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <Logo :style="setStyle" logo="TSBLogo.svg" size="300" />
-    <Logo logo="snoop-logo.svg" size="300" />
+    <div class="logos">
+      <Logo class="logos--sb" logo="TSBLogo.svg" size="300" />
+      <Logo logo="snoop-logo.svg" size="300" />
+    </div>
     <ConnectMetamask  @connect="connectToMetamask()" />
     <SearchBar v-if="$store.state.isConnected" @search="searchToken()"/>
     <NftInfo v-if="$store.state.currentTokenData !== null" />
@@ -14,11 +16,6 @@
 
 export default {
   name: 'IndexPage',
-    computed:{
-    setStyle(){
-       return this.$store.state.isConnected ? "margin-top:70px":""
-    }
-  },
   mounted(){
     if(this.$store.state.connectedAccount !== ''){
       this.$store.commit('setIsConnected', true)
@@ -82,5 +79,9 @@ export default {
   .container {
     width: 100%;
     height: 100%;
+  }
+
+  .logos{
+    margin:4em 0 1.5em ;
   }
 </style>
