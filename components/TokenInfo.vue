@@ -3,10 +3,10 @@
     <img class="token__img" :src="$store.state.currentTokenData.image_url" >
     <div class="token__info">
       <p class= "token__info__description">{{$store.state.currentTokenData.description}}</p>
-      <ul class="token__info__description__attrs">
-        <li v-for="attribute in $store.state.currentTokenData.attributes" :key="attribute.trait_type" :style="attribute.value === '' ? 'display:none' :''" class="token__info__description__attrs__attribute">
-          <p class = "token__info__description__attrs__attribute__trait" >{{attribute.value !== '' ? attribute.trait_type : ''}}</p>
-          <p class = "token__info__description__attrs__attribute__value" >{{attribute.value}}</p>
+      <ul class="token__info__attrs">
+        <li v-for="attribute in $store.state.currentTokenData.attributes" :key="attribute.trait_type" :style="attribute.value === '' ? 'display:none' :''" class="token__info__attrs__attribute">
+          <p class = "token__info__attrs__attribute__trait" >{{attribute.value !== '' ? attribute.trait_type : ''}}</p>
+          <p class = "token__info__attrs__attribute__value" >{{attribute.value}}</p>
         </li>
       </ul>
     </div>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .token{
+  .token {
     display:grid;
     width:100%;
     margin:0 auto;
@@ -29,21 +29,24 @@ export default {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
-    &__info{
+    &__info {
       margin-top:2em;
       background-color:rgba(0,0,0,.5);
       padding: 1em;
       line-height:1.5em;
-    }
 
-    &__attrs{
+      &__description {
+
+      }
+
+          &__attrs {
       display: grid;
       grid-template-columns: repeat(2,1fr);
       list-style: none;
       padding:0;
       margin-top:1em;
 
-      &__attribute{
+      &__attribute {
         display: grid;
         grid-template-columns: 2fr 3fr;
         width:90%;
@@ -54,7 +57,7 @@ export default {
         background:$accent;
         color: $primary;
 
-        &__trait{
+        &__trait {
           background:$primary;
           color: $accent;
           padding:.25em;
@@ -63,15 +66,16 @@ export default {
         }
       }
     }
+  }
 
-    @media screen and (min-width: $breakpoint-desktop) {
-      width: 100%;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: 1fr;
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: 100%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
 
-      &__info{
-        margin: 0 0 0 1em;
-      }
+    &__info{
+      margin: 0 0 0 1em;
     }
   }
+}
 </style>
