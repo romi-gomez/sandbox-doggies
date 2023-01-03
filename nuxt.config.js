@@ -1,7 +1,9 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  router: {
+    base: '/<sandbox-doggies>/'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'sandbox-doggies',

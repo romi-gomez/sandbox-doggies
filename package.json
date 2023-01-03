@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "lint:prettier": "prettier --check .",
@@ -17,6 +18,7 @@
   },
   "dependencies": {
     "core-js": "^3.25.3",
+    "marked": "^4.2.5",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-markdown": "^2.2.4",
@@ -47,6 +49,7 @@
     "node-sass": "^8.0.0",
     "postcss-html": "^1.5.0",
     "prettier": "^2.7.1",
+    "push-dir": "^0.4.1",
     "sass": "^1.57.1",
     "sass-loader": "^10.4.1",
     "stylelint": "^14.13.0",
