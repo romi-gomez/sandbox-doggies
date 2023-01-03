@@ -1,13 +1,11 @@
-
-
 <template>
   <div class="connect-container">
-    <Button class="connect__button" button-text="Connect to Metamask!" @click="$emit('connect')" />
+    <Button v-if="!$store.state.isConnected" class="connect__button" button-text="Connect to Metamask to search a Doggy" @click="$emit('connect')" />
+    <AccountConnected v-if="$store.state.isConnected" />
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'ConnectMetamask',
 }

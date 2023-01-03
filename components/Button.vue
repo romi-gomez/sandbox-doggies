@@ -17,10 +17,10 @@ export default {
 <style lang="scss">
 .button-container {
   border-radius: 0.5em;
-  background-color: $black;
+  background-color: $primary;
   color: $accent;
   border: none;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: 600;
@@ -28,13 +28,13 @@ export default {
 
   &:hover {
     cursor: pointer;
-    background-color: $accent-darker;
+    background-color: $accent;
     color: $primary;
   }
 
   &:active {
     font-size: 1.25em;
-    font-weight: 800;
+    font-weight: 700;
   }
 }
 </style>
