@@ -6,7 +6,7 @@
     </div>
     <ConnectMetamask  @connect="connectToMetamask()" />
     <SearchBar v-if="$store.state.isConnected" @search="searchToken()"/>
-    <NftInfo v-if="$store.state.currentTokenData !== null" />
+    <TokenInfo v-if="$store.state.currentTokenData !== null" />
   </div>
 </template>
 

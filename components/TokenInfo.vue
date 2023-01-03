@@ -2,7 +2,7 @@
   <div class="token">
     <img :src="$store.state.currentTokenData.image_url" >
     <div class="__info">
-      <vue-markdown class= "__description">{{$store.state.currentTokenData.description}}</vue-markdown>
+      <p class= "__description">{{$store.state.currentTokenData.description}}</p>
       <ul class="__attributes">
         <li v-for="attribute in $store.state.currentTokenData.attributes" :key="attribute.trait_type" :style="attribute.value === '' ? 'display:none' :''" class="__attribute">
           <p class = "__trait" >{{attribute.value !== '' ? attribute.trait_type : ''}}</p>
@@ -14,12 +14,9 @@
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+
 export default {
-  name: 'NftInfoContainer',
-  components: {
-    VueMarkdown
-  }
+  name: 'TokenInfo',
 }
 </script>
 
