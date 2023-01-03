@@ -1,13 +1,13 @@
 <template>
-  <div :style="setStyle" class="account-container">
-    <img :src="require(`~/assets/images/metamask-logo.png`)" alt="metamask logo">
-    <p class="account-number">You are connected to the account: <span>{{$store.state.connectedAccount}} </span></p>
+  <div :style="setStyle" class="connected-account">
+    <img class="connected-account__wallet-logo" :src="require(`~/assets/images/metamask-logo.png`)" alt="metamask logo">
+    <p class="connected-account__address">You are connected to the account: <span> {{$store.state.connectedAccount}} </span></p>
   </div>
 </template>
 
 <script>
 export default {
-  name:'connectedAccount',
+  name:'ConnectedAccount',
   data: () => {
     return {
       isMounted: false
@@ -25,7 +25,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .account-container{
+
+  .connected-account{
     width:100%;
     position: absolute;
     display:flex;
@@ -40,19 +41,20 @@ export default {
     font-weight:700;
     margin-top:-60px;
 
-    img {
+    &__wallet-logo {
       height: 50%;
       justify-self: flex-end;
-      margin-right: 1em;
+      margin-right: .5em;
     }
 
-  .account-number{
-    justify-self: flex-end;
-    span{
-      color:$accent;
-    }
-  }
+    &__address{
+      justify-self: flex-end;
+      font-size:.65em;
 
+      span{
+        color:$accent;
+      }
+    }
   }
 
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
-    <div class="logos">
-      <Logo class="logos--sb" logo="TSBLogo.svg" size="300" />
-      <Logo logo="snoop-logo.svg" size="300" />
+  <div class="main">
+    <div class="main__logos">
+      <Logo class="main__logos--sb" logo="TSBLogo.svg" size="300" />
+      <Logo class="main__logos--sd" logo="snoop-logo.svg" size="300" />
     </div>
-    <ConnectMetamask  @connect="connectToMetamask()" />
-    <SearchBar v-if="$store.state.isConnected" @search="searchToken()"/>
-    <TokenInfo v-if="$store.state.currentTokenData !== null" />
+    <ConnectMetamask class="main__connect" @connect="connectToMetamask()" />
+    <SearchBar v-if="$store.state.isConnected" class="main__search-bar" @search="searchToken()"/>
+    <TokenInfo v-if="$store.state.currentTokenData !== null" class="main__token-info"/>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
         console.error(err)
       }
     },
-   async searchToken(){
+    async searchToken(){
       try{
         if(this.$store.state.isConnected){
           const web3 = new Web3(window.ethereum)
@@ -76,12 +76,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .container {
-    width: 100%;
+
+  .main {
+    width: 90%;
     height: 100%;
+    margin: 0 auto;
+
+    &__logos{
+      margin:4em 0 0 0 ;
+    }
   }
 
-  .logos{
-    margin:4em 0 0 0 ;
-  }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <button class="button-container" @click="$emit('click')" type="button" >{{ buttonText }}</button>
+  <button class="button" @click="$emit('click')" type="button" >{{ buttonText }}</button>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-.button-container {
+.button {
   border-radius: 0.5em;
   background-color: $primary;
   color: $accent;

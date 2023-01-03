@@ -1,6 +1,6 @@
 <template>
   <div class="search-bar">
-    <TextInput @enterPressed="sendIdForSearch()"/>
+    <TextInput class="search-bar__input" @enterPressed="sendIdForSearch()"/>
     <Button class="search-bar__button" :button-text="setButtonText" @click="sendIdForSearch()"/>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  width: 70%;
+  width: 100%;
   margin: 3em auto;
 
   &__button {
@@ -36,7 +36,6 @@ export default {
   @media screen and (min-width: $breakpoint-desktop) {
     grid-template-columns: 8fr 4fr;
     grid-template-rows: 1fr;
-    width:80%;
 
     &__button {
       margin-top: 0;

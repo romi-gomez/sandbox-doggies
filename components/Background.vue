@@ -1,11 +1,11 @@
 <template>
-  <div class="background-container">
-    <div class="background-container__overlay"></div>
-    <div class="background-container__floating-image --1"></div>
-    <div class="background-container__floating-image --2"></div>
-    <div class="background-container__floating-image --3"></div>
-    <div class="background-container__floating-image --4"></div>
-    <div class="background-container__floating-image --5"></div>
+  <div class="background">
+    <div class="background__overlay"></div>
+    <div class="background__floating-image --1"></div>
+    <div class="background__floating-image --2"></div>
+    <div class="background__floating-image --3"></div>
+    <div class="background__floating-image --4"></div>
+    <div class="background__floating-image --5"></div>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   }
 }
 
-.background-container {
+.background {
   position: fixed;
   z-index: -1;
   width: 100%;
@@ -48,7 +48,7 @@ export default {
 
     &.--1 {
       background-image: url('~assets/images/leaf-1.avif');
-      opacity: 0.6;
+      opacity: 0.8;
       animation: 6s ease-in-out infinite pulse;
       grid-column-start: 1;
       grid-column-end: 5;
@@ -59,16 +59,17 @@ export default {
 
     &.--2 {
       background-image: url('~assets/images/leaf-2.avif');
-      opacity: 0.8;
+      opacity: 0.4;
       animation: 8s ease-in-out infinite pulse;
       grid-column-start: 3;
       grid-column-end: 3;
       grid-row-start: 3;
       grid-row-end: 5;
     }
+
     &.--3 {
       background-image: url('~assets/images/leaf-3.avif');
-      opacity: 0.7;
+      opacity: 0.6;
       animation: 10s ease-in-out infinite pulse;
       grid-column-start: 1;
       grid-column-end: 4;
@@ -76,9 +77,10 @@ export default {
       grid-row-end: 7;
       margin-top: -10%;
     }
+
     &.--4 {
       background-image: url('~assets/images/leaf-4.avif');
-      opacity: 0.4;
+      opacity: 0.7;
       animation: 6s ease-in-out infinite pulse;
       grid-column-start: 4;
       grid-column-end: 7;
@@ -86,9 +88,10 @@ export default {
       grid-row-end: 7;
       margin-right: -80%;
     }
+
     &.--5 {
       background-image: url('~assets/images/leaf-5.avif');
-      opacity: 0.3;
+      opacity: 0.5;
       animation: 8s ease-in-out infinite pulse;
       grid-column-start: 5;
       grid-column-end: 8;

@@ -1,5 +1,5 @@
 <template>
-  <div class="logo-container">
+  <div class="logo">
     <a :href="url" target="_blank">
       <img :style="imageStyle" :src="require(`~/assets/images/${logo}`)" />
     </a>
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-.logo-container {
+.logo{
   padding: 1em;
   text-align: center;
   display: flex;
