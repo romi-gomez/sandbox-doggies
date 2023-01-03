@@ -1,13 +1,16 @@
 <template>
-  <input
-    id="doggyIdInput"
-    class="input-text"
-    type="text"
-    name="DoggyId"
-    v-model="getInputValue"
-    placeholder="Enter a doggy ID or press the button to get a random one"
-    @keydown.enter="$emit('enterPressed')"
-  />
+  <div>
+    <p class="input-label">Enter a 4 digits ID (or leave it empty for a random search) </p>
+    <input
+      id="doggyIdInput"
+      class="input-text"
+      type="text"
+      name="doggyIdInput"
+      v-model="getInputValue"
+      placeholder="XXXX"
+      @keydown.enter="$emit('enterPressed')"
+    />
+  </div>
 </template>
 
 <script>
@@ -27,17 +30,27 @@ export default {
 </script>
 
 <style lang="scss">
-.input-text {
-  border: none;
-  box-shadow: none;
-  border-radius: 0.5em;
-  padding: 0.5em 1em;
-  background: $primary;
-  color: $accent;
-  font-size: 1.25em;
-
-  &:focus-visible {
-    outline: 2px solid $accent;
+  .input-label{
+    color:$accent;
+    font-weight:700;
+    width:100%;
+    background:$accent;
+    color:$primary;
+    padding:.25em 1em;
   }
+
+  .input-text {
+    width:100%;
+    border: none;
+    box-shadow: none;
+    border-radius: 0 0 0.5em 0.5em;
+    padding: 0.5em 1em;
+    background: $primary;
+    color: $accent;
+    font-size: 1.25em;
+
+    &:focus-visible {
+      outline: 2px solid $accent;
+    }
 }
 </style>

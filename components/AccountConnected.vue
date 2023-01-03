@@ -41,8 +41,9 @@ export default {
     margin-top:-60px;
 
     img {
-      height:50%;
+      height: 50%;
       justify-self: flex-end;
+      margin-right: 1em;
     }
 
   .account-number{

@@ -36,7 +36,7 @@ export default {
   @media screen and (min-width: $breakpoint-desktop) {
     grid-template-columns: 8fr 4fr;
     grid-template-rows: 1fr;
-    width: 80%;
+    width:80%;
 
     &__button {
       margin-top: 0;
