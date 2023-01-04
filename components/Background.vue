@@ -80,7 +80,8 @@ export default {
 
     &.--4 {
       background-image: url('~assets/images/leaf-4.avif');
-      opacity: 0.7;
+      opacity: .9;
+      z-index:1;
       animation: 6s ease-in-out infinite pulse;
       grid-column-start: 4;
       grid-column-end: 7;

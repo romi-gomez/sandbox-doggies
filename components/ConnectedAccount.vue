@@ -55,6 +55,12 @@ export default {
         color:$accent;
       }
     }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      &__address{
+        font-size:.9em;
+      }
   }
+}
 
 </style>

@@ -39,6 +39,7 @@ export default {
       background:$accent;
       color:$primary;
       padding:.25em 1em;
+      border-radius: 0.5em 0.5em 0 0;
 
     & span{
       display: block;;

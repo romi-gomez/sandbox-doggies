@@ -78,6 +78,8 @@ export default {
 <style lang="scss" scoped>
 
   .main {
+    margin:0 auto;
+    max-width:1280px;
     width: 90%;
     height: 100%;
     margin: 0 auto;

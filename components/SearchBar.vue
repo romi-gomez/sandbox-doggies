@@ -10,7 +10,7 @@ export default {
   name: 'SearchBar',
   computed: {
     setButtonText() {
-      return this.$store.state.currentTokenId !== '' && this.$store.state.currentTokenId.length === 4 ? 'Show this Doggy' : 'Show me any Doggy'
+      return this.$store.state.currentTokenId !== '' && this.$store.state.currentTokenId.length === 4 ? `Show Doggy #${this.$store.state.currentTokenId}` : 'Show me any Doggy'
     },
   },
   methods: {
